@@ -1,12 +1,23 @@
+from pydantic import BaseModel
+
+class Patient(BaseModel):
+
+     name: str
+     age: int
 
 
-def insert_patient_data(name: str, age: int):
-    if type(name) == str and type(age) == int:
-        print(name)
-        print(age)
-        print('inserted into database')
-    else:
-        raise TypeError('Incorrect data type.')
+def insert_patient_data(patient: Patient):
+    print(patient.name)
+    print(patient.age)
+    print('inserted into database')
+    
+def update_patient_data(patient: Patient):
+    print(patient.name)
+    print(patient.age)
+    print('Updated in database')
 
-# Type Error is added for the parameters.
-insert_patient_data("Gaurav", '25') 
+patient_info = {'name': 'Visha', 'age': 25}
+patient1 = Patient(**patient_info)
+
+# insert_patient_data(patient1)
+update_patient_data(patient1)
