@@ -1,0 +1,17 @@
+Pydantic Use Cases
+
+1. Runtime Type Checking 
+2. Data Validation w.r.t variables like non-negative.
+
+Pydantic Workflow
+
+1. Define a Pydantic model (class) that represents the expected structure of the input data.
+   - Specify the required fields, their data types, and any validation rules.
+
+2. Create an instance of the model by passing raw input data (e.g., a dictionary or JSON).
+   - Pydantic automatically validates the data.
+   - It converts values to the correct Python types whenever possible.
+   - If the data is invalid, it raises a ValidationError.
+
+3. Use the validated Pydantic model object throughout your application.
+   - This ensures your code works with clean, type-safe, and validated data.
