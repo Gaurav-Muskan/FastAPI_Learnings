@@ -1,11 +1,11 @@
 
 
-def insert_patient_data(name, age):
+def insert_patient_data(name: str, age: int):
 
     print(name)
     print(age)
     print('inserted into database')
 
 
-# No validation is there for name and age.
-insert_patient_data('nitish', 'thirty')
+# Type Hints are added for the parameters.
+insert_patient_data("Gaurav", 25)
