@@ -24,7 +24,7 @@ class Patient(BaseModel):
             raise ValueError('Not a valid domain')
         
         return value
-    
+    # Mode is used to get value before type coersion.
     @field_validator('age', mode='before')
     @classmethod
     def validate_age(cls, value):
@@ -49,7 +49,7 @@ def insert_patient_data(patient: Patient):
     print('inserted into database')
     
 
-patient_info = {'name': 'Visha', 'age': '25', 'email': 'gaurav@hdfc.com', 'married': True, 'allergies': ['pollen', 'dust'], 'weight': '75.2', 'contact_details': {'email': 'gaurav@hdfc.com', 'phone': '9876543210'}}
+patient_info = {'name': 'Visha', 'age': 25, 'email': 'gaurav@hdfc.com', 'married': True, 'allergies': ['pollen', 'dust'], 'weight': '75.2', 'contact_details': {'email': 'gaurav@hdfc.com', 'phone': '9876543210'}}
 
 patient1 = Patient(**patient_info) # Validation & Type coersion takes place at this place.
 
